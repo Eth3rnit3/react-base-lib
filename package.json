@@ -5,13 +5,18 @@
   "main": "dist/index.js",
   "scripts": {
     "type-check": "tsc --noEmit",
-    "type-check:watch": "yarn type-check -- --watch",
-    "build": "yarn build:types && yarn build:js",
+    "build": "yarn build:types && yarn build:js && yarn build:sass && yarn build:css",
     "build:types": "tsc --emitDeclarationOnly",
-    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline"
+    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
+    "build:sass": "./node_modules/node-sass/bin/node-sass --recursive --output dist src",
+    "build:css": "postcss dist/**/*.css --base dist --dir dist"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react",
+    "compoennts",
+    "library"
+  ],
+  "author": "eth3rnit3",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.7.5",
@@ -22,7 +27,12 @@
     "@babel/preset-env": "^7.7.6",
     "@babel/preset-react": "^7.7.4",
     "@babel/preset-typescript": "^7.7.4",
+    "@types/node": "^12.12.18",
     "@types/react": "^16.9.16",
+    "@types/reactstrap": "^8.2.0",
+    "autoprefixer": "^9.7.3",
+    "babel-plugin-transform-rename-import": "^2.3.0",
+    "node-sass": "^4.13.0",
     "react": "^16.12.0",
     "typescript": "^3.7.3"
   }

@@ -1,2 +1,2 @@
-import TitleItem from "./lib/TitleItem";
-export { TitleItem };
+import Example from "./lib/Example";
+export { Example };

@@ -1,6 +1,13 @@
 {
-  "presets": ["@babel/react", "@babel/typescript"],
+  "presets": ["@babel/react", "@babel/env", "@babel/typescript"],
   "plugins": [
+    [
+      "transform-rename-import",
+      {
+        "original": "^(.+?)\\.scss$",
+        "replacement": "$1.css"
+      }
+    ],
     "@babel/proposal-class-properties",
     "@babel/proposal-object-rest-spread"
   ]

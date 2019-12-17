@@ -1,4 +1,4 @@
 import React from "react";
-import TitleItem from "./lib/TitleItem";
+import Example from "./lib/Example";
 
-export { TitleItem };
+export { Example };
